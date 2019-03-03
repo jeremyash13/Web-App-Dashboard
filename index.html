@@ -1,23 +1,246 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/normalize.css" />
-        <link rel="stylesheet" href="css/styles.css" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="dest/styles.css" />
         <title>Web App Dashboard</title>
     </head>
 
     <body>
-        <header></header>
-        <main>
+        <header class="header">
+            <ul class="header__ul flex-horz">
+                <li class="header__logo">
+                    <span class="logo-bold">Your</span>App™
+                </li>
+                <li class="header__list-item notification-bubble">
+                    <img class="header__icon--bell" src="icons/icon-bell.svg">
+                </li>
+                <li class="header__list-item">
+                    <img class="header__list-item--avatar" src="images/member-2.jpg">
+                </li>
+                <li class="header__list-item">
+                    Josh Sullivan
+                </li>
+            </ul>
+        </header>
 
-        </main>
-        <footer></footer>
+        <div class="body-wrappershadow">
+            <nav class="nav ghetto-clearfix">
+                <ul class="main-nav">
+                    <li class="main-nav__list-item current-page">
+                        <a href="#"><img class="nav--dashboard" src="icons/icon-dashboard.svg"></a>
+                    </li>
+                    <li class="main-nav__list-item--members">
+                        <a href="#"><img src="icons/icon-members.svg"></a>
+                    </li>
+                    <li class="main-nav__list-item--visits">
+                        <a href="#"><img src="icons/icon-visits.svg"></a>
+                    </li>
+                    <li class="main-nav__list-item--settings">
+                        <a href="#"><img src="icons/icon-settings.svg"></a>
+                    </li>
+                </ul>
+            </nav>
+            <main class="main flex-vert">
+                <header class="secondary-header flex-horz">
+                    <h3>Dashboard</h3>
+                    <form class="header__form--search shadow-inset">
+                        <input class="form__input--search" type="search" id="search-box" placeholder="Search">
+                        <div id="search-icon">&#128269</div>
+                    </form>
+                </header>
 
-        <!-- Chart.js CDN -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+                <div class="alert shadow-2">
+                    <p class="float-left">
+                        <span class="bold-text">Alert</span> 
+                        Nullam quis risus eget urna mollis ornare vel eu leo. 
+                        Nullam id dolor id nibh ultricies vehicula ut id elit. 
+                        Curabitur blandit tempus porttitor.</p>
+                    <div class="alert-close float-right">&#128473</div>
+                </div>
+                
+                <div class="charts--large">
+                    <div id="container__chart--traffic-main">
+                        <canvas id="chart--traffic-main"></canvas>
+                    </div>
+                </div>
+                
 
-        <!-- Main JavaScript file -->
-        <script src="js/app.js"></script>
+                <div class="charts--medium flex-horz ">
+                    <div id="container__chart--traffic-bar">
+                        <h5>DAILY TRAFFIC</h5>
+                        <div>
+                            <canvas class="" id="chart--traffic-bar"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div id="container__chart--mobile-users">
+                        <h5>MOBILE USERS</h5>
+                        <div>
+                            <canvas class="" id="chart--mobile-users"></canvas>
+                        </div>    
+                    </div>                    
+                </div>
+                    
+                <div id="charts--social-stats">
+                    <h5>SOCIAL STATS</h5>
+                    <ul class="flex-horz">
+                        <li class="social-stats__list-item">
+                            <div class="container__svg float-left">
+                                <img src="icons/icon-twitter.svg">
+                            </div>                            
+                            <h6>Twitter</h6>
+                            <p>10,345</p>
+                        </li>
+                        <li class="social-stats__list-item">
+                            <div class="container__svg float-left">
+                                <img src="icons/icon-facebook.svg">
+                            </div>                            
+                            <h6>Facebook</h6>
+                            <p>8,739</p>
+                        </li>
+                        <li class="social-stats__list-item">
+                            <div class="container__svg float-left">
+                                <img src="icons/icon-google-plus.svg">
+                            </div>                            
+                            <h6>Google+</h6>
+                            <p>2,530</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="feed">
+                    <div class="new-members float-left">
+                        <h5>NEW MEMBERS</h5>
+                        <div class="new-member">
+                            <div class="new-member--avatar float-left">
+                                <img src="images/member-1.jpg">
+                            </div>
+                            <h6 class="">Victora Chambers</h6>
+                            <a href="#" class="">victoria.chambers80@example.com</a>
+                            <p class="new-member--date">10/15/15</p>
+                        </div>
+
+                        <div class="new-member">
+                            <div class="new-member--avatar float-left">
+                                <img src="images/member-2.jpg">
+                            </div>
+                            <h6 class="">Dale Byrd</h6>
+                            <a href="#" class="">dale.byrd52@example.com</a>
+                            <p class="new-member--date">10/15/15</p>
+                        </div>
+
+                        <div class="new-member">
+                            <div class="new-member--avatar float-left">
+                                <img src="images/member-3.jpg">
+                            </div>
+                            <h6 class="">Dawn Wood</h6>
+                            <a href="#" class="">dawn.wood16@example.com</a>
+                            <p class="new-member--date">10/15/15</p>
+                        </div>
+
+                        <div class="new-member">
+                            <div class="new-member--avatar float-left">
+                                <img src="images/member-4.jpg">
+                            </div>
+                            <h6 class="">Dan Oliver</h6>
+                            <a href="#" class="">dan.oliver82@example.com</a>
+                            <p class="new-member--date">10/15/15</p>
+                        </div>
+                    </div>
+
+                    <div class="recent-activities float-right ">
+                        <h5>RECENT ACTIVITY</h5>
+                        <div class="new-activity">
+                            <div class="new-activity--avatar float-left">
+                                <img src="images/member-1.jpg">
+                            </div>
+                            <p>Victoria Chambers commented on YourApp's SEO Tips</p>
+                            <p>4 hours ago</p>
+                            <div class="arrow"><img src="icons/arrow.svg"></div>
+                        </div>
+                        <div class="new-activity">
+                            <div class="new-activity--avatar float-left">
+                                <img src="images/member-2.jpg">
+                            </div>
+                            <p>Dale Byrd liked the post Facebook's Changes for 2016</p>
+                            <p>5 hours ago</p>
+                            <div class="arrow"><img src="icons/arrow.svg"></div>
+                        </div>
+                        <div class="new-activity">
+                            <div class="new-activity--avatar float-left">
+                                <img src="images/member-3.jpg">
+                            </div>
+                            <p>Dawn Wood commented on Facebook's Changes for 2016</p>
+                            <p>5 hours ago</p>
+                            <div class="arrow"><img src="icons/arrow.svg"></div>
+                        </div>
+                        <div class="new-activity">
+                            <div class="new-activity--avatar float-left">
+                                <img src="images/member-4.jpg">
+                            </div>
+                            <p>Dan Oliver posted YourApp's SEO Tips</p>
+                            <p>1 day ago</p>
+                            <div class="arrow"><img src="icons/arrow.svg"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="utilities">
+                    <div class="message-user float-left">
+                        <h5>MESSAGE USER</h5>
+                        <form class="form--message-user">
+                            <input type="text" class="utilities__input--user" placeholder="Search for user">
+                            <!-- <input type="text" class="utilities__input--message" placeholder="Message for user"> -->
+                            <textarea class="utilities__input--message" placeholder="Message for user"></textarea>
+                            <button>SEND</button>
+                        </form>
+                    </div>
+
+                    <div class="settings float-right">
+                        <h5>SETTINGS</h5>
+                        <form class="settings__form">
+                            <label class="label--main">Send Email Notifications</label>
+                            <div class="button-switch">
+                                <input type="checkbox" id="switch--email-notifs" class="switch" checked/>
+                                <label for="switch--email-notifs" class="lbl-off">Off</label>
+                                <label for="switch--email-notifs" class="lbl-on">On</label>
+                              </div>
+
+                              <label class="label--main">Set Profile to Public</label>
+                              <div class="button-switch">
+                                <input type="checkbox" id="switch--public-profile" class="switch" checked/>
+                                <label for="switch--public-profile" class="lbl-off">Off</label>
+                                <label for="switch--public-profile" class="lbl-on">On</label>
+                              </div>
+
+                            <select name="timezone" class="settings-form__select--timezone">
+                                <option value="" hidden>Select Timezone</option>
+                                <option value="CST">Central Standard Time</option>
+                                <option value="MST">Mountain Standard Time</option>
+                                <option value="PST">Pacific Standard Time</option>
+                                <option value="AST">Alaska Standard Time</option>
+                                <option value="HAST">Hawaii-Aleutian Standard Time</option>
+                            </select>
+                        
+                            <div class="settings__div--buttons">
+                                <button class="btn--save">SAVE</button>
+                                <button class="btn--cancel">CANCEL</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </main>
+            <footer></footer>
+
+            <!-- Chart.js CDN -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+            <!-- Main JavaScript file -->
+            <script src="js/app.js"></script>
+        </div>
     </body>
 </html>
